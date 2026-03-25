@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charlie Kirk</title>
+  <style>
+    /* Reset & base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f9;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #0d1b2a 0%, #1b3a5c 100%);
+      color: #fff;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #e8c46a;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+    }
+    header p.tagline {
+      margin-top: 10px;
+      font-size: 1.15rem;
+      color: #e8c46a;
+      font-style: italic;
+    }
+
+    /* Navigation */
+    nav {
+      background: #1b3a5c;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 10px 20px;
+    }
+    nav a {
+      color: #e8c46a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 6px 14px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    nav a:hover { background: #e8c46a; color: #0d1b2a; }
+
+    /* Main content */
+    main {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Section card */
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 36px 40px;
+    }
+    section h2 {
+      font-size: 1.6rem;
+      color: #1b3a5c;
+      margin-bottom: 16px;
+      border-left: 4px solid #e8c46a;
+      padding-left: 12px;
+    }
+    section p { margin-bottom: 12px; }
+
+    /* Fact grid */
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .fact-card {
+      background: #f0f4fa;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .fact-card .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+    .fact-card .value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1b3a5c;
+    }
+
+    /* Timeline */
+    .timeline { list-style: none; position: relative; padding-left: 30px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #e8c46a;
+      border-radius: 3px;
+    }
+    .timeline li {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #1b3a5c;
+      border: 3px solid #e8c46a;
+    }
+    .timeline li .year {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #e8a020;
+      display: block;
+    }
+
+    /* Books */
+    .book-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .book-card {
+      background: #f0f4fa;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .book-card h3 { color: #1b3a5c; margin-bottom: 6px; font-size: 1rem; }
+    .book-card p { font-size: 0.88rem; color: #555; margin: 0; }
+
+    /* Quote */
+    blockquote {
+      border-left: 4px solid #e8c46a;
+      padding: 16px 20px;
+      background: #fdf8ec;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #444;
+      margin: 10px 0;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-weight: 700;
+      color: #1b3a5c;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #0d1b2a;
+      color: #aaa;
+      font-size: 0.88rem;
+      margin-top: 20px;
+    }
+    footer a { color: #e8c46a; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      section { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Placeholder avatar using initials via inline SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"
+         viewBox="0 0 160 160" role="img" aria-label="Charlie Kirk portrait placeholder"
+         style="border-radius:50%;border:4px solid #e8c46a;display:block;margin:0 auto 20px;">
+      <circle cx="80" cy="80" r="80" fill="#1b3a5c"/>
+      <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+            font-size="60" font-family="Segoe UI,Arial,sans-serif"
+            font-weight="bold" fill="#e8c46a">CK</text>
+    </svg>
+
+    <h1>Charlie Kirk</h1>
+    <p class="tagline">Political Commentator · Author · Founder of Turning Point USA</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#career">Career</a>
+    <a href="#tpusa">Turning Point USA</a>
+    <a href="#books">Books</a>
+    <a href="#media">Media</a>
+    <a href="#quotes">Quotes</a>
+  </nav>
+
+  <main>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About Charlie Kirk</h2>
+      <p>
+        Charles James Kirk (born October 14, 1993) is an American conservative political commentator,
+        radio host, author, and activist. He is best known as the founder and president of
+        <strong>Turning Point USA (TPUSA)</strong>, a non-profit organization dedicated to promoting
+        free-market and constitutionalist principles on college campuses across the United States.
+      </p>
+      <p>
+        Born in Prospect Heights, Illinois, Kirk grew up in a suburb of Chicago. He is a prominent figure
+        in conservative media and politics and has been a vocal supporter of traditional American values,
+        limited government, and free enterprise.
+      </p>
+
+      <div class="fact-grid" style="margin-top:24px;">
+        <div class="fact-card">
+          <div class="label">Born</div>
+          <div class="value">October 14, 1993</div>
+        </div>
+        <div class="fact-card">
+          <div class="label">Birthplace</div>
+          <div class="value">Prospect Heights, Illinois</div>
+        </div>
+        <div class="fact-card">
+          <div class="label">Nationality</div>
+          <div class="value">American</div>
+        </div>
+        <div class="fact-card">
+          <div class="label">Occupation</div>
+          <div class="value">Commentator · Author · Activist</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career Timeline -->
+    <section id="career">
+      <h2>Career Timeline</h2>
+      <ul class="timeline">
+        <li>
+          <span class="year">2012</span>
+          Founded Turning Point USA at age 18, shortly after graduating from
+          Wheeling High School.
+        </li>
+        <li>
+          <span class="year">2015</span>
+          Expanded TPUSA's national reach to hundreds of college and high-school chapters
+          across the country.
+        </li>
+        <li>
+          <span class="year">2017</span>
+          Became a nationally recognized political commentator; published his first book,
+          <em>Time for a Turning Point</em>.
+        </li>
+        <li>
+          <span class="year">2019</span>
+          Launched <em>The Charlie Kirk Show</em>, which became one of the most listened-to
+          conservative podcasts in the United States.
+        </li>
+        <li>
+          <span class="year">2020</span>
+          Played a prominent role in the 2020 presidential election campaign and founded
+          Turning Point Action, a political advocacy organization.
+        </li>
+        <li>
+          <span class="year">2022</span>
+          His podcast topped the charts as one of America's most downloaded political shows,
+          with millions of weekly listeners.
+        </li>
+        <li>
+          <span class="year">2024</span>
+          Continued as a leading conservative voice during the 2024 presidential election cycle,
+          campaigning extensively and broadcasting daily commentary.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Turning Point USA -->
+    <section id="tpusa">
+      <h2>Turning Point USA</h2>
+      <p>
+        <strong>Turning Point USA (TPUSA)</strong> is a non-profit organization founded by Kirk in 2012.
+        Its mission is to identify, educate, train, and organize students to promote the principles of
+        free markets, limited government, and American exceptionalism.
+      </p>
+      <p>
+        TPUSA operates chapters at thousands of high schools and colleges across the country,
+        providing students with resources, speakers, and events to engage with conservative ideas.
+        The organization hosts <em>AmericaFest</em>, one of the largest annual conservative
+        student conferences in the nation.
+      </p>
+      <div class="fact-grid" style="margin-top:20px;">
+        <div class="fact-card">
+          <div class="label">Founded</div>
+          <div class="value">2012</div>
+        </div>
+        <div class="fact-card">
+          <div class="label">Chapters</div>
+          <div class="value">3,000+</div>
+        </div>
+        <div class="fact-card">
+          <div class="label">Headquarters</div>
+          <div class="value">Scottsdale, Arizona</div>
+        </div>
+        <div class="fact-card">
+          <div class="label">Annual Event</div>
+          <div class="value">AmericaFest</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books -->
+    <section id="books">
+      <h2>Books</h2>
+      <div class="book-list">
+        <div class="book-card">
+          <h3>Time for a Turning Point (2017)</h3>
+          <p>Kirk's debut book laying out a conservative vision for America's future, covering
+          education, economics, and culture.</p>
+        </div>
+        <div class="book-card">
+          <h3>Campus Battlefield (2018)</h3>
+          <p>An examination of how the left dominates college campuses and what conservatives
+          can do to fight back.</p>
+        </div>
+        <div class="book-card">
+          <h3>The MAGA Doctrine (2020)</h3>
+          <p>An analysis of the political movement behind Donald Trump and the principles
+          driving it.</p>
+        </div>
+        <div class="book-card">
+          <h3>Right Wing Revolution (2023)</h3>
+          <p>Kirk's manifesto outlining 101 ways to combat the radical left and reclaim
+          American culture and institutions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media -->
+    <section id="media">
+      <h2>Media &amp; Platforms</h2>
+      <p>
+        Charlie Kirk reaches millions of people daily through multiple media channels:
+      </p>
+      <ul style="padding-left:20px;margin-top:8px;">
+        <li><strong>The Charlie Kirk Show</strong> — A daily podcast and radio program covering
+        politics, culture, and current events.</li>
+        <li><strong>Rumble</strong> — Live streams and video content on the free-speech video platform.</li>
+        <li><strong>Twitter / X</strong> — One of the most followed conservative voices on social media.</li>
+        <li><strong>Salem Radio Network</strong> — Syndicated nationwide radio broadcast.</li>
+        <li><strong>Turning Point USA's Real America's Voice</strong> — Television appearances
+        and hosted segments.</li>
+      </ul>
+    </section>
+
+    <!-- Quotes -->
+    <section id="quotes">
+      <h2>Notable Quotes</h2>
+
+      <blockquote>
+        "America is the most just, most free, most prosperous nation in the history of the world."
+        <cite>— Charlie Kirk</cite>
+      </blockquote>
+
+      <blockquote>
+        "The free market is the greatest wealth-creating mechanism ever devised by mankind."
+        <cite>— Charlie Kirk</cite>
+      </blockquote>
+
+      <blockquote>
+        "The left doesn't want a debate. They want a monologue."
+        <cite>— Charlie Kirk</cite>
+      </blockquote>
+
+      <blockquote>
+        "Young people are the most important battlefield in the culture war."
+        <cite>— Charlie Kirk</cite>
+      </blockquote>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2024 Charlie Kirk Fan Page &nbsp;|&nbsp;
+      <a href="https://www.charliekirk.com" target="_blank" rel="noopener noreferrer">charliekirk.com</a>
+      &nbsp;|&nbsp;
+      <a href="https://www.tpusa.com" target="_blank" rel="noopener noreferrer">tpusa.com</a>
+    </p>
+    <p style="margin-top:8px;font-size:0.8rem;color:#666;">
+      This page is for informational purposes only.
+    </p>
+  </footer>
+
+</body>
+</html>
