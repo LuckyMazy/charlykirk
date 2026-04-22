@@ -439,6 +439,71 @@
       font-size: 0.95rem;
     }
 
+    /* ── Memorial ── */
+    .memorial-section {
+      background: #111;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .memorial-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Charlie_Kirk_memorial_Salt_Lake_City.jpg/1280px-Charlie_Kirk_memorial_Salt_Lake_City.jpg') center / cover no-repeat;
+      filter: brightness(0.2) saturate(0.5);
+    }
+
+    .memorial-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .memorial-inner .section-label { color: var(--gold); }
+
+    .memorial-inner h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: #fff;
+      margin-bottom: 28px;
+    }
+
+    .memorial-inner p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .memorial-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .memorial-detail-val {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .memorial-detail-lbl {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
     /* ── Footer ── */
     footer {
       background: var(--navy);
@@ -512,6 +577,7 @@
       <li><a href="#tpusa">TPUSA</a></li>
       <li><a href="#books">Books</a></li>
       <li><a href="#media">Media</a></li>
+      <li><a href="#memorial">Memorial</a></li>
     </ul>
   </nav>
 
@@ -596,6 +662,10 @@
         <li>
           <span class="year">2024</span>
           <span class="desc">Continued as a leading conservative voice during the presidential election cycle, campaigning extensively and broadcasting daily commentary.</span>
+        </li>
+        <li>
+          <span class="year">2025</span>
+          <span class="desc">On September 10, Kirk was assassinated at age 31 while speaking at an outdoor debate at Utah Valley University in Orem, Utah. He was posthumously awarded the Presidential Medal of Freedom.</span>
         </li>
       </ul>
     </div>
@@ -702,6 +772,35 @@
         <span class="platform-desc">Live streams and video content on the free-speech video platform.</span>
       </li>
     </ul>
+  </section>
+
+  <!-- Memorial -->
+  <section class="memorial-section" id="memorial">
+    <div class="memorial-inner">
+      <p class="section-label">September 10, 2025</p>
+      <h2>In Memoriam</h2>
+      <p>On September 10, 2025, Charlie Kirk was assassinated while speaking at an outdoor campus debate at Utah Valley University in Orem, Utah. He was 31 years old. A single shot from a gunman positioned on a nearby rooftop struck Kirk, who was later pronounced dead at Timpanogos Regional Hospital.</p>
+      <p>Tyler James Robinson, 22, surrendered to authorities the following day after a 33-hour manhunt. Prosecutors charged him with aggravated murder.</p>
+      <p>Kirk received a state funeral on September 21 at State Farm Stadium in Arizona, attended by President Trump and Vice President Vance. He was posthumously awarded the Presidential Medal of Freedom and honored with a National Day of Remembrance.</p>
+      <div class="memorial-details">
+        <div>
+          <div class="memorial-detail-val">Utah Valley University</div>
+          <div class="memorial-detail-lbl">Location</div>
+        </div>
+        <div>
+          <div class="memorial-detail-val">31 Years Old</div>
+          <div class="memorial-detail-lbl">Age</div>
+        </div>
+        <div>
+          <div class="memorial-detail-val">Presidential Medal of Freedom</div>
+          <div class="memorial-detail-lbl">Posthumous Honor</div>
+        </div>
+        <div>
+          <div class="memorial-detail-val">State Farm Stadium, AZ</div>
+          <div class="memorial-detail-lbl">State Funeral</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
